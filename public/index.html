@@ -3,16 +3,55 @@
   <head>
     <title>CS4241 Assignment 2</title>
     <meta charset="utf-8">
-    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
     <!-- get rid of favicon error -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   </head>
   <body>
-    <form>
-      <input type="text" id="yourname" value="your name here">
-      <button>submit</button>
-    </form>
+    <div class="workspace">
+      <!--<h1>Focus Workspace</h1>-->
+
+      <!-- To Do List-->
+      <section id="tasks">
+        <h2>Tasks</h2>
+        <input type="text" id="task-input" placeholder="Add task..">
+        <input type="date" id="due-date-input">
+        <button id="add-task">Add</button>
+        <ul id="task-list"></ul>
+        <ul id="completed-tasks"></ul>
+      </section>
+
+      <div class="right-column">
+        <!-- Focus timer -->
+          <section id="focusTimer">
+            <h2>Focus Timer</h2>
+            <div id="timer">
+              <span id="minutes">45</span>:<span id="seconds">00</span>
+            </div>
+
+            <div class = "timerButtons">
+              <button id="start-pause" onclick="startPause()">Start</button>
+              <button id="reset" onclick="timerReset()">Restart</button>
+            </div>
+          </section>
+
+        <!-- Note section ps. stays as a textbox, doesn't save-->
+        <section id="notes">
+          <h2>Notes</h2>
+            <!--<input type="text" id="entry-title" class="entry-title-input" placeholder="Entry title">-->
+            <!--<input type="text" id="author" placeholder="Your Name">-->
+            <!--<input type="text" id="date" placeholder="Today's Date">-->
+          <textarea id="focus" class="focus-input" placeholder="What are you working on today?"></textarea>
+          <textarea id="distraction" class="distraction-input" placeholder="Is there anything distracting you?"></textarea>
+        </section>
+      </div>
+      <!-- entry list -->
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/timer.js"></script>
   </body>
 </html>

@@ -1,4 +1,178 @@
 body {
-  background:black;
-  color:white;
+  margin: 40px;
+  background: rgb(27, 21, 21);
+  color: rgb(255, 255, 255);
+  font-family: "Ubuntu Mono";
+  font-size: 18px;
 }
+
+h1 {
+  font-family:"Ubuntu Mono";
+  font-size: 40px;
+  color:rgb(228, 150, 16);
+}
+
+h2{
+  font-family: "Ubuntu Mono";
+  font-size: 25px;
+  line-height: 0px;
+  color:rgb(228, 150, 16);
+}
+
+p {
+  font-family: "Ubuntu Mono";
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.workspace {
+  display:flex;
+  gap: 40px;
+  padding: 20px;
+}
+
+section {
+  background-color: rgb(42, 30, 30);
+  font-family: "Ubuntu Mono", Calibri;
+  padding:30px;
+  border-radius: 3px;
+}
+
+#task-input {
+  width: 80%;
+  background-color: rgb(234, 212, 183);
+}
+
+#tasks {
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+}
+
+.right-column {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form {
+  border-radius: 10px;
+  border: 1px black;
+  padding: 10px;
+}
+
+#timer{
+  font-family: "Ubuntu Mono";
+  font-size: 45px;
+  width: 70%;
+  padding:30px;
+  border-radius: 5px;
+}
+
+#focusTimer{
+  width: 50%;
+  padding: 20px;
+}
+
+#start-pause{
+  margin-right: 10px;
+  background-color: rgb(228, 150, 16);
+  font-family: "Ubuntu Mono", Calibri;
+  font-size: 20px;
+}
+
+#reset{
+  background-color: rgb(111, 111, 111);
+  font-family: "Ubuntu Mono";
+  font-size: 20px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+li span{
+  margin-left: 8px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+li button{
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  accent-color: orange;
+}
+
+input[type="checkbox"]:hover{
+  background-color: #b8a1b5;
+}
+
+small {
+  color: orange;
+  font-size: 0.8em;
+}
+
+.completed{
+  text-decoration: line-through;
+  color: #523b4f;
+}
+
+
+#notes {
+  width: 80%;
+}
+
+.distraction-input {
+  height: 8em;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 2px;
+  border: unset;
+  background-color: rgb(234, 212, 183);
+  width: 95%;
+}
+
+.distraction-input:focus{
+  outline-color:rgb(128, 77, 0);
+}
+
+.focus-input {
+  height:8em;
+  padding: 1em;
+  margin:1em auto;
+  border: unset;
+  border-radius: 2px;
+  background-color: rgb(234, 212, 183);
+  width:95%;
+}
+
+.focus-input:focus{
+  outline-color:rgb(128, 77, 0);
+}
+
+#title {
+  font-size: 18px;
+}
+
+#author {
+  font-size: 15px;
+}
+
+#date {
+  font-size: 15px;
+}
+
