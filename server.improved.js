@@ -96,18 +96,24 @@ const handlePatch = function (request, response) {
   request.on("data", chunk => dataString += chunk);
   request.on("end", () => {
     const parsed = JSON.parse(dataString);
+    let updatedTask = null;
+
     if (parsed.originalTask && parsed.newTask){
       const task = tasks.find(t => t.task === parsed.originalTask);
-      if (task) task.task = parsed.newTask;
+      if (task) {
+        task.task = parsed.newTask;
+        updatedTask = task;
+      }
     } else {
       const task = tasks.find(t => t.task === parsed.task);
       if (task){
         if (parsed.hasOwnProperty('completed')) task.completed = parsed.completed;
         if (parsed.hasOwnProperty('dueDate')) task.dueDate = formatDate(new Date(parsed.dueDate));
+        updatedTask = task;
       }
     }
     response.writeHead(200, {"Content-Type": "application/json"});
-    response.end(JSON.stringify(addDerivedFields({...task})));
+    response.end(JSON.stringify(addDerivedFields({...updatedTask})));
   });
 };
 
