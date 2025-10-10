@@ -10,8 +10,11 @@
 const addTaskButton = document.getElementById("add-task"),
         taskInput = document.getElementById("task-input"),
         dueDateInput = document.getElementById("due-date-input");
+        priorityList = document.getElementById("priority-tasks");
         taskList = document.getElementById("task-list");
         completedList = document.getElementById("completed-tasks");
+        overdueTitle = document.getElementById("overdue-header");
+        otherTitle = document.getElementById("other-header");
 
 //ADDS A NEW TASK
 const submit = async function( event ) {
@@ -24,6 +27,7 @@ const submit = async function( event ) {
   if (!task) return;
   const dueDate = dueDateInput.value || new Date().toISOString().split("T")[0];
 
+  
   //const body = JSON.stringify({task: text, completed: false, dueDate});
 
   const response = await fetch( "/tasks", {
@@ -42,6 +46,8 @@ const submit = async function( event ) {
 const printTasks = (tasks) => {
   taskList.innerHTML = "";
   completedList.innerHTML = "";
+  priorityList.innerHTML = "";
+
   tasks.forEach( item => {
     const li = document.createElement('li');
 
@@ -110,8 +116,16 @@ const printTasks = (tasks) => {
     li.appendChild(dueDateText);
     li.appendChild(deleteButton);
 
-    if (item.completed) completedList.appendChild(li);
-    else taskList.appendChild(li);
+
+    if (item.completed) {
+      completedList.appendChild(li);
+    } else  if (item.overdue) {
+      overdueTitle.innerHTML="Priority";
+      otherTitle.innerHTML="Other Tasks";
+      priorityList.appendChild(li);
+    } else {
+      taskList.appendChild(li);
+    }
   });
 };
 

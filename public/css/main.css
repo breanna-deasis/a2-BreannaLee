@@ -106,11 +106,21 @@ li span{
   margin-left: 8px;
   text-align: left;
   flex-grow: 1;
+  display: inline-block;
 }
 
 li button{
   margin-left: 8px;
   cursor: pointer;
+}
+
+.overdue {
+  color: red;
+  font-weight: bold;
+}
+
+#priority-tasks {
+  font-weight: bold;
 }
 
 input[type="checkbox"] {
@@ -124,6 +134,9 @@ input[type="checkbox"]:hover{
 small {
   color: orange;
   font-size: 0.8em;
+  margin-left: 1.8em;
+  margin-top: 0.2em;
+  display: block;
 }
 
 .completed{
