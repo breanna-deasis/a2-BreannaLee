@@ -1,7 +1,7 @@
 {
-  "name": "Assignment 2",
+  "name": "to-do-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple to do list website to help motivate students",
   "author": "Breanna de Asis Lee",
   "scripts": {
     "start": "node server.improved.js"
