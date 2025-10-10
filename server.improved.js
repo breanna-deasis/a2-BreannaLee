@@ -45,6 +45,7 @@ function addDerivedFields(task){
 }
 
 const server = http.createServer((request,response )  => {
+  console.log("Request:", request.method, request.url);
   if( request.method === "GET" ) {
     if (request.url === "/tasks"){
       response.writeHead(200, {"Content-Type": "application/json"});
