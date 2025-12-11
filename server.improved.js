@@ -19,8 +19,9 @@ let today = new Date(),
     formattedDate = formatDate(today);
     
 let tasks = [
-  {task: "Assignment 2", completed: false, dueDate:formattedDate},
-  {task: "Assignment 3", completed: false, dueDate:formattedDate}
+  {task: "Mark this task as completed", completed: false, dueDate:formattedDate},
+  {task: "Add a new task", completed: false, dueDate:formattedDate},
+  {task: "Start the focus timer", completed: false, dueDate:formattedDate}
   //{"title": "I made paper today!", "text": "My roommates and I have been saving our egg cartons for the past two years which is great material to make thick paper and starter pots for plants." },
   //{"title": "Started a compost", "text": "I always need more potting soil for my tomato plants, and by the end of our week our trash bag fills up with banana peels, vegetable stems, and eggshells. I found a trash bucket at the thrift store and I've finally set it up! Right now I have a glass jar on the kitchen counter to collect scraps, soil in my container, and I put a wet piece of cardboard outside to collect worms for the compost. I've been in an awful mood and I'm so proud of myself for doing something to feel better" }
 ];
