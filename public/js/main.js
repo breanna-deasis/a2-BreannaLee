@@ -47,6 +47,7 @@ const printTasks = (tasks) => {
   taskList.innerHTML = "";
   completedList.innerHTML = "";
   priorityList.innerHTML = "";
+  let overdue = false;
 
   tasks.forEach( item => {
     const li = document.createElement('li');
@@ -120,13 +121,18 @@ const printTasks = (tasks) => {
     if (item.completed) {
       completedList.appendChild(li);
     } else  if (item.overdue) {
-      overdueTitle.innerHTML="Priority";
-      otherTitle.innerHTML="Other Tasks";
+      overdue = true;
       priorityList.appendChild(li);
     } else {
       taskList.appendChild(li);
     }
   });
+  if (overdue == true) {
+      overdueTitle.innerHTML="OVERDUE TASKS!!";
+      otherTitle.innerHTML="Things to work on later..";
+  } else {
+      overdueTitle.innerHTML="";
+      otherTitle.innerHTML="";
 };
 
 const toggleTask = async (taskName, isCompleted) => {
