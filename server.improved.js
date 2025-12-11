@@ -54,12 +54,15 @@ const server = http.createServer((request,response )  => {
     } else {
       handleGet( request, response );
     } 
-  } else if( request.method === "POST" ){
+  } else if( request.method === "POST" && request.url === "/tasks" ) {
     handlePost( request, response ) 
-  } else if (request.method === "PATCH"){
+  } else if (request.method === "PATCH" && request.url === "/tasks"){
     handlePatch(request, response)
-  } else if (request.method === "DELETE"){
+  } else if (request.method === "DELETE" && request.url.startsWith("/tasks/")){
     handleDelete(request, response)
+  } else {
+    response.writeHead( 405 , {"Content-Type": "text/plain"} );
+    response.end( "Method Not Allowed" )
   }
 })
 
